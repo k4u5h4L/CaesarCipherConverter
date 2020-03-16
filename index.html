@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Caesar Cipher</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Caesar Ciphers
+				</span>
+
+				<div class="wrap-input100 validate-input bg1" data-validate="Please Type The Text">
+					<span class="label-input100">PlainText or Cipher</span>
+					<input class="input100" type="text" name="name" id="plain" placeholder="Enter Data">
+				</div>
+
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Encryption/Decryption</span>
+					<div>
+						<select class="js-select2" name="action" id="type">
+							<option>Encrypt</option>
+							<option>Decrypt</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Key of Cipher</span>
+					<div>
+						<select class="js-select2" name="service" id="key1">
+							<option>Choose Key</option>
+							<option>Take Key as Length</option>
+							<option>Custom Key</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+
+				<div class="w-full dis-none js-show-service">
+					<div class="wrap-contact100-form-radio">
+						<span class="label-input100">Enter The Key As A Number</span>
+
+						<div class="contact100-form-radio m-t-15">
+							<input class="input100" id="CustomKey" type="text" name="custom-key" placeholder="Enter Key" >
+						</div>
+					</div>
+				</div>
+				
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" >
+					<span class="label-input100">Result:</span>
+					<input type="text" class="input100" name="message" id="show" placeholder="Your Result will be displayed here." disabled ></textarea>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<input type="button" class="contact100-form-btn" onclick="show_cipher()" id="submit" value="submit" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="js/cipher.js"></script>
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function(){
+				$(this).on('select2:close', function (e){
+					if($(this).val() == "Custom Key") {
+						$('.js-show-service').slideDown();
+					}
+					else {
+						$('.js-show-service').slideUp();
+					}
+				});
+			});
+		})
+	</script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
