@@ -17,3 +17,11 @@ cd CaesarCipherConverter
 firefox index.html
 ```
 Else you can clone this repo and open it via your file manager and your own browser.
+
+
+There may be issues with the application.
+* It may not work for decryption with large key sizes.
+* It does not work for sentences. 
+
+The above issues will be patched shortly.
+Thank you.
