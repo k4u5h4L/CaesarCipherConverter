@@ -1,4 +1,4 @@
-# CaesarCipherConverter
+# Caesar Cipher Converter
 Encrypter/decrypter for one of the oldest types of cryptography, the Caesar Cipher.
 
 ## How to use
